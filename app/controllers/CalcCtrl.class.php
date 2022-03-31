@@ -96,6 +96,6 @@ class CalcCtrl
         getSmarty()->assign('form', $this->form);
         getSmarty()->assign('res', $this->result);
 
-        getSmarty()->display('calc.html');
+        getSmarty()->display('calc.tpl');
     }
 }
