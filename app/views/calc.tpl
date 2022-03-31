@@ -1,6 +1,5 @@
 {extends file="main.tpl"}
 
-
 {block name=content}
 
 	<form action="{$conf->action_root}calcCompute" method="post">

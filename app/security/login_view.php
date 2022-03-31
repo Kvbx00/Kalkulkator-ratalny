@@ -25,7 +25,6 @@
 			</form>
 
 			<?php
-			//wyświeltenie listy błędów, jeśli istnieją
 			if (isset($messages)) {
 				if (count($messages) > 0) {
 					echo '<div style="background-color: #a4b5bd; border-radius: 15px; width: 280px; padding: 20px; margin-top: 40px; line-height: 30px;">';

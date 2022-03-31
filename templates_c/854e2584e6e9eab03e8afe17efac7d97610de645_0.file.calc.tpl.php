@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-31 17:27:29
+/* Smarty version 4.1.0, created on 2022-03-31 17:32:02
   from 'D:\xampp\htdocs\Kalkulkator-ratalny\app\views\calc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6245c861da2109_77348536',
+  'unifunc' => 'content_6245c972138717_51172392',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '854e2584e6e9eab03e8afe17efac7d97610de645' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Kalkulkator-ratalny\\app\\views\\calc.tpl',
-      1 => 1648740435,
+      1 => 1648740501,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6245c861da2109_77348536 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6245c972138717_51172392 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
-
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5120879476245c861d960c4_08062240', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11646999816245c97212c9a7_16425764', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_5120879476245c861d960c4_08062240 extends Smarty_Internal_Block
+class Block_11646999816245c97212c9a7_16425764 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_5120879476245c861d960c4_08062240',
+    0 => 'Block_11646999816245c97212c9a7_16425764',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

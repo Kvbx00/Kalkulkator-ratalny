@@ -1,4 +1,5 @@
 <?php
+
 require_once 'core/Config.class.php';
 $conf = new core\Config();
 require_once 'config.php';
