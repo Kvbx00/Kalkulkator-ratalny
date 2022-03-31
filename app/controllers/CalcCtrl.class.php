@@ -1,7 +1,7 @@
-<?php
+<?php namespace app\controllers;
 
-require_once 'CalcForm.class.php';
-require_once 'CalcResult.class.php';
+use app\forms\CalcForm;
+use app\transfer\CalcResult;
 
 class CalcCtrl
 {
@@ -37,7 +37,7 @@ class CalcCtrl
            getMessages()->addError('Nie podano wysokości kwoty kredytu!');
 
 
-        if (getMessages()->isError()) {
+        if (! getMessages()->isError()) {
             if (!is_numeric($this->form->capital)) {
                 getMessages()->addError('Pierwsza wartość nie jest liczbą');
             }
