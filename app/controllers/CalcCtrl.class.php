@@ -1,29 +1,25 @@
 <?php
 
-require_once $conf->root_path . '/libs/Smarty.class.php';
-require_once $conf->root_path . '/libs/Messages.class.php';
-require_once $conf->root_path . '/app/CalcForm.class.php';
-require_once $conf->root_path . '/app/CalcResult.class.php';
+require_once 'CalcForm.class.php';
+require_once 'CalcResult.class.php';
 
 class CalcCtrl
 {
 
-    private $messages;
     private $form;
     private $result;
 
     public function __construct()
     {
-        $this->messages = new Messages();
         $this->form = new CalcForm();
         $this->result = new CalcResult();
     }
 
     public function getParams()
     {
-        $this->form->capital = isset($_REQUEST['capital']) ? $_REQUEST['capital'] : null;
-        $this->form->interest = isset($_REQUEST['interest']) ? $_REQUEST['interest'] : null;
-        $this->form->op = isset($_REQUEST['op']) ? $_REQUEST['op'] : null;
+        $this->form->capital = getFromRequest('capital');
+        $this->form->interest = getFromRequest('interest');
+        $this->form->op = getFromRequest('op');
     }
 
     public function validate()
@@ -35,22 +31,22 @@ class CalcCtrl
 
 
         if ($this->form->capital == "") {
-            $this->messages->addError('Nie podano wysokości kwoty kredytu!');
+            getMessages()->addError('Nie podano wysokości kwoty kredytu!');
         }
         if ($this->form->interest == "")
-            $this->messages->addError('Nie podano wysokości kwoty kredytu!');
+           getMessages()->addError('Nie podano wysokości kwoty kredytu!');
 
 
-        if (!$this->messages->isError()) {
+        if (getMessages()->isError()) {
             if (!is_numeric($this->form->capital)) {
-                $this->messages->addError('Pierwsza wartość nie jest liczbą');
+                getMessages()->addError('Pierwsza wartość nie jest liczbą');
             }
             if (!is_numeric($this->form->interest)) {
-                $this->messages->addError('Druga wartość nie jest liczbą');
+                getMessages()->addError('Druga wartość nie jest liczbą');
             }
         }
 
-        return !$this->messages->isError();
+        return ! getMessages()->isError();
     }
 
     function process()
@@ -61,7 +57,7 @@ class CalcCtrl
 
             $this->form->capital = intval($this->form->capital);
             $this->form->interest = intval($this->form->interest);
-            $this->messages->addInfo('Wpisano poprawne wartości.');
+            getMessages()->addInfo('Wpisano poprawne wartości.');
 
             switch ($this->form->op) {
                 case '1':
@@ -82,7 +78,7 @@ class CalcCtrl
                     break;
             }
 
-            $this->messages->addInfo('Rata kredytu została obliczona.');
+            getMessages()->addInfo('Rata kredytu została obliczona.');
 
             $this->result->result = ($this->form->capital + (($this->form->capital * $this->form->interest) / 100)) / $this->months;
         }
@@ -92,19 +88,14 @@ class CalcCtrl
 
     public function generateView()
     {
-        global $conf;
 
-        $smarty = new Smarty();
-        $smarty->assign('conf', $conf);
+        getSmarty()->assign('page_title', 'Kalkulator kredytowy');
+        getSmarty()->assign('page_description', 'Szablonowanie Smarty');
+        getSmarty()->assign('page_header', 'Szablony Smarty');
 
-        $smarty->assign('page_title', 'Kalkulator kredytowy');
-        $smarty->assign('page_description', 'Szablonowanie Smarty');
-        $smarty->assign('page_header', 'Szablony Smarty');
+        getSmarty()->assign('form', $this->form);
+        getSmarty()->assign('res', $this->result);
 
-        $smarty->assign('form', $this->form);
-        $smarty->assign('res', $this->result);
-        $smarty->assign('messages', $this->messages);
-
-        $smarty->display($conf->root_path . '/app/calc.html');
+        getSmarty()->display('calc.html');
     }
 }

@@ -1,10 +1,9 @@
-
-{extends file=$conf->root_path|cat:"/templates/main.html"}
+{extends file="main.html"}
 
 
 {block name=content}
 
-	<form action="{$conf->app_url}/app/calc.php" method="post">
+	<form action="{$conf->action_root}calcCompute" method="post">
 
 			<h2>Kalkulator kredytowy</h2>
 			<form>
