@@ -1,8 +1,10 @@
 {extends file="main.tpl"}
 
+
+
 {block name=content}
 
-	<form action="{$conf->action_root}calcCompute" method="post">
+	<form action="{$conf->action_url}calcCompute" method="post">
 
 			<h2>Kalkulator kredytowy</h2>
 			<form>
@@ -29,22 +31,7 @@
 				</div>
 				<button class="noselect" type="submit" value="Oblicz"></button>
 
-				{if $messages -> isError()} 
-					<div style="background-color: #a4b5bd; border-radius: 15px; width: 280px; padding: 20px; margin-top: 40px; line-height: 30px;">
-					{foreach $messages->getErrors() as $err}
-						{$err} <br>
-					{/foreach}
-					</div>
-				{/if}
-
-				{if $messages->isInfo()}
-				<div style="background-color: #a4b5bd; border-radius: 15px; width: 280px; padding: 20px; margin-top: 40px; line-height: 30px;">
-				Informacje:</br>
-				{foreach $messages->getInfos() as $inf}
-					{$inf}</br>
-				{/foreach}
-				</div>
-				{/if}
+				{include file='messages.tpl'}
 
 				{if isset($res->result)}
 					<div style="background-color: #a4b5bd; border-radius: 15px; width: 280px; padding: 20px; margin-top: 40px; line-height: 30px;">
@@ -55,4 +42,11 @@
 			</form>
 
 	</form>
+
+	<a href ="{$conf->action_url}logout">Wyloguj</a></br>
+
+    <div style="font-size: 12px; color: white;">
+	    Użytkownik: {$user->login}, rola: {$user->role}
+	</div>
+
 {/block}

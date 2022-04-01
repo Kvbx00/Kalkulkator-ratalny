@@ -5,17 +5,14 @@
 
 	<meta charset="utf-8" />
 	<title>{$page_title|default:"Kalkulator kredytowy"}</title>
-	<link rel="stylesheet" href="/Kalkulkator-ratalny/app/style.css">
+	<link rel="stylesheet" href="{$conf->app_url}/app/style.css" />
 
 </head>
 
 <body>
 
-    <div style="width:90%; margin: 2em auto;">
-		<a style="color: white;" href="{$conf->app_url}/app/security/logout.php">Wyloguj</a>
-	</div>
-
     <div class="login-box">
+    
         {block name=content} Domyślna treść zawartości .... {/block}
     </div>
 

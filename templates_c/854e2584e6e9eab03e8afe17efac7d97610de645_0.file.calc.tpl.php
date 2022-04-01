@@ -1,49 +1,52 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-31 17:32:02
+/* Smarty version 4.1.0, created on 2022-04-01 14:17:59
   from 'D:\xampp\htdocs\Kalkulkator-ratalny\app\views\calc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6245c972138717_51172392',
+  'unifunc' => 'content_6246ed771700d9_00183331',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '854e2584e6e9eab03e8afe17efac7d97610de645' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Kalkulkator-ratalny\\app\\views\\calc.tpl',
-      1 => 1648740501,
+      1 => 1648815477,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_6245c972138717_51172392 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6246ed771700d9_00183331 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
+
+
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11646999816245c97212c9a7_16425764', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1407748056246ed771670b0_10030506', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_11646999816245c97212c9a7_16425764 extends Smarty_Internal_Block
+class Block_1407748056246ed771670b0_10030506 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_11646999816245c97212c9a7_16425764',
+    0 => 'Block_1407748056246ed771670b0_10030506',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
-	<form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+	<form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 calcCompute" method="post">
 
 			<h2>Kalkulator kredytowy</h2>
@@ -73,38 +76,8 @@ calcCompute" method="post">
 				</div>
 				<button class="noselect" type="submit" value="Oblicz"></button>
 
-				<?php if ($_smarty_tpl->tpl_vars['messages']->value->isError()) {?> 
-					<div style="background-color: #a4b5bd; border-radius: 15px; width: 280px; padding: 20px; margin-top: 40px; line-height: 30px;">
-					<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value->getErrors(), 'err');
-$_smarty_tpl->tpl_vars['err']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
-$_smarty_tpl->tpl_vars['err']->do_else = false;
+				<?php $_smarty_tpl->_subTemplateRender('file:messages.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-						<?php echo $_smarty_tpl->tpl_vars['err']->value;?>
- <br>
-					<?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-					</div>
-				<?php }?>
-
-				<?php if ($_smarty_tpl->tpl_vars['messages']->value->isInfo()) {?>
-				<div style="background-color: #a4b5bd; border-radius: 15px; width: 280px; padding: 20px; margin-top: 40px; line-height: 30px;">
-				Informacje:</br>
-				<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value->getInfos(), 'inf');
-$_smarty_tpl->tpl_vars['inf']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['inf']->value) {
-$_smarty_tpl->tpl_vars['inf']->do_else = false;
-?>
-					<?php echo $_smarty_tpl->tpl_vars['inf']->value;?>
-</br>
-				<?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-				</div>
-				<?php }?>
 
 				<?php if ((isset($_smarty_tpl->tpl_vars['res']->value->result))) {?>
 					<div style="background-color: #a4b5bd; border-radius: 15px; width: 280px; padding: 20px; margin-top: 40px; line-height: 30px;">
@@ -116,6 +89,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			</form>
 
 	</form>
+
+	<a href ="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+logout">Wyloguj</a></br>
+
+    <div style="font-size: 12px; color: white;">
+	    Użytkownik: <?php echo $_smarty_tpl->tpl_vars['user']->value->login;?>
+, rola: <?php echo $_smarty_tpl->tpl_vars['user']->value->role;?>
+
+	</div>
+
 <?php
 }
 }
