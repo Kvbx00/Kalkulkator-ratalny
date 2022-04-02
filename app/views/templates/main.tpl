@@ -12,10 +12,8 @@
 <body>
 
     <div class="login-box">
-    
         {block name=content} Domyślna treść zawartości .... {/block}
     </div>
 
 </body>
-
 </html>

@@ -1,4 +1,6 @@
-<?php namespace app\controllers;
+<?php 
+
+namespace app\controllers;
 
 use app\forms\CalcForm;
 use app\transfer\CalcResult;
@@ -49,8 +51,8 @@ class CalcCtrl
         return ! getMessages()->isError();
     }
 
-    function process()
-    {
+    public function action_calcCompute(){
+
         $this->getparams();
 
         if ($this->validate()) {
@@ -78,19 +80,22 @@ class CalcCtrl
                     break;
             }
 
-            getMessages()->addInfo('Rata kredytu została obliczona.');
-
             $this->result->result = ($this->form->capital + (($this->form->capital * $this->form->interest) / 100)) / $this->months;
+            getMessages()->addInfo('Rata kredytu została obliczona.');
         }
         $this->generateView();
     }
 
+    public function action_calcShow(){
+		$this->generateView();
+	}
 
     public function generateView()
     {
         global $user;
 
-        getSmarty()->assign('user',$user);
+        // getSmarty()->assign('user',$user);
+        getSmarty()->assign('user',unserialize($_SESSION['user']));
         
         getSmarty()->assign('page_title', 'Kalkulator kredytowy');
 

@@ -1,6 +1,10 @@
-<?php namespace app\transfer;
+<?php 
+
+namespace app\transfer;
 
 class CalcResult {
 	public $op_name;
 	public $result;	
-} 
+}
+
+?>
