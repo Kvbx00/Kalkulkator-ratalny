@@ -36,7 +36,7 @@ class CalcCtrl
             getMessages()->addError('Nie podano wysokości kwoty kredytu!');
         }
         if ($this->form->interest == "")
-           getMessages()->addError('Nie podano wysokości kwoty kredytu!');
+           getMessages()->addError('Nie podano oprocentowania!');
 
 
         if (! getMessages()->isError()) {

@@ -12,7 +12,7 @@
 					<input id="id_pass" type="password" name="pass" />
 					<label>Hasło</label>
 				</div>
-				<button class="noselect" type="submit" value="zaloguj"></button>
+				<button class="button-login" type="submit" value="zaloguj"></button>
 			</form>
 
 

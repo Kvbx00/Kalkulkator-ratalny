@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-01 14:17:59
+/* Smarty version 4.1.0, created on 2022-04-02 15:08:31
   from 'D:\xampp\htdocs\Kalkulkator-ratalny\app\views\calc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6246ed771700d9_00183331',
+  'unifunc' => 'content_62484acf829c32_89489156',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '854e2584e6e9eab03e8afe17efac7d97610de645' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Kalkulkator-ratalny\\app\\views\\calc.tpl',
-      1 => 1648815477,
+      1 => 1648904895,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_6246ed771700d9_00183331 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62484acf829c32_89489156 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -30,16 +30,16 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1407748056246ed771670b0_10030506', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_64722156462484acf8210b9_52280552', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_1407748056246ed771670b0_10030506 extends Smarty_Internal_Block
+class Block_64722156462484acf8210b9_52280552 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1407748056246ed771670b0_10030506',
+    0 => 'Block_64722156462484acf8210b9_52280552',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,7 +52,7 @@ calcCompute" method="post">
 			<h2>Kalkulator kredytowy</h2>
 			<form>
 				<div class="user-box">
-					<input id="id_capital" type="text" name="capital" required="" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->capital;?>
+					<input id="id_capital" type="text" name="capital" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->capital;?>
 " /><br />
 					<label>Podaj kwotę kredytu:</label>
 				</div>
@@ -70,11 +70,11 @@ calcCompute" method="post">
 					</div></br>
 				</div>
 				<div class="user-box">
-					<input id="id_interest" type="text" name="interest" required="" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->interest;?>
+					<input id="id_interest" type="text" name="interest" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->interest;?>
 " /><br />
 					<label>Wpisz oprocentowanie, bez znaku "%":</label>
 				</div>
-				<button class="noselect" type="submit" value="Oblicz"></button>
+				<button class="button-count" type="submit" value="Oblicz"></button>
 
 				<?php $_smarty_tpl->_subTemplateRender('file:messages.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

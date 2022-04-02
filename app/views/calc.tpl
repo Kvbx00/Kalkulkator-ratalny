@@ -9,7 +9,7 @@
 			<h2>Kalkulator kredytowy</h2>
 			<form>
 				<div class="user-box">
-					<input id="id_capital" type="text" name="capital" required="" value="{$form->capital}" /><br />
+					<input id="id_capital" type="text" name="capital" value="{$form->capital}" /><br />
 					<label>Podaj kwotę kredytu:</label>
 				</div>
 				<div class="user-box">
@@ -26,10 +26,10 @@
 					</div></br>
 				</div>
 				<div class="user-box">
-					<input id="id_interest" type="text" name="interest" required="" value="{$form->interest}" /><br />
+					<input id="id_interest" type="text" name="interest" value="{$form->interest}" /><br />
 					<label>Wpisz oprocentowanie, bez znaku "%":</label>
 				</div>
-				<button class="noselect" type="submit" value="Oblicz"></button>
+				<button class="button-count" type="submit" value="Oblicz"></button>
 
 				{include file='messages.tpl'}
 
